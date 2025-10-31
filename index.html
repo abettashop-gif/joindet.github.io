@@ -89,6 +89,18 @@
             margin-top: 1rem;
             margin-bottom: 0.5rem;
         }
+        /* Style untuk bagian instruksi */
+        .instructions ol, .instructions ul {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 0.8rem;
+        }
+        .instructions h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
         .footer {
             text-align: center;
             margin-top: 4rem;
@@ -107,8 +119,8 @@
             <p class="tagline">Absensi Cepat dan Mudah dengan QR Code</p>
         </header>
 
-        <!-- ✅ GANTI # DENGAN LINK DOWNLOAD APK YANG ANDA SALIN TADI -->
-        <a href="https://drive.google.com/file/d/1z0eLEPL0MO9JISqcfHbwqDOrojse8yNl/view?usp=sharing" class="download-button">Unduh Aplikasi (APK)</a>
+        <!-- ✅ GANTI # DENGAN LINK DOWNLOAD APK DARI GITHUB RELEASES -->
+        <a href="https://github.com/joindet/joindet.github.io/releases/latest/download/app-release.apk" class="download-button">Unduh Aplikasi (APK)</a>
 
         <section class="section">
             <h2>Fitur Unggulan</h2>
@@ -131,7 +143,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section instructions">
             <h2>Cara Instalasi</h2>
             <ol>
                 <li>Klik tombol "Unduh Aplikasi" di atas.</li>
@@ -140,6 +152,67 @@
                 <li>Kembali dan lanjutkan proses instalasi hingga selesai.</li>
             </ol>
         </section>
+
+        <!-- ======================================================= -->
+        <!-- ✅ BAGIAN BARU: PETUNJUK PENGGUNAAN DITAMBAHKAN DI SINI   -->
+        <!-- ======================================================= -->
+        <section class="section instructions">
+            <h2>📝 Petunjuk Penggunaan</h2>
+            <p>Ikuti langkah-langkah mudah ini untuk memulai absensi digital Anda.</p>
+
+            <h4>Bagian 1: Instalasi dan Pendaftaran Awal</h4>
+            <ol>
+                <li><strong>Unduh & Instal Aplikasi:</strong> Ikuti petunjuk "Cara Instalasi" di atas.</li>
+                <li><strong>Daftar Akun Guru:</strong> Buka aplikasi, lalu pilih peran Anda (Wali Kelas atau Guru Mata Pelajaran).</li>
+                <li><strong>Isi Formulir:</strong> Lengkapi data diri Anda. Pastikan email aktif untuk pemulihan akun.</li>
+                <li><strong>Masa Percobaan:</strong> Selamat! Setelah berhasil mendaftar, aplikasi Anda langsung aktif dalam mode percobaan gratis selama 14 hari dengan akses penuh ke semua fitur.</li>
+            </ol>
+
+            <h4>Bagian 2: Menyiapkan Kelas dan Siswa</h4>
+            <ol>
+                <li><strong>Masuk ke Manajemen Kelas:</strong> Dari halaman Dashboard, buka menu navigasi (ikon tiga garis), lalu pilih <strong>"Manajemen Kelas"</strong>.</li>
+                <li><strong>Buat Kelas Baru:</strong> Tekan tombol <code>+</code> untuk membuat kelas pertama Anda (contoh: "Kelas 10-A").</li>
+                <li><strong>Masuk ke Detail Kelas:</strong> Klik pada kartu kelas yang baru saja Anda buat.</li>
+                <li><strong>Tambah Siswa:</strong> Di halaman Detail Kelas, pilih menu <strong>"Manajemen Siswa"</strong>. Di sini Anda bisa:
+                    <ul>
+                        <li><strong>Tambah Manual:</strong> Tekan tombol <code>+</code> untuk menambah siswa satu per satu.</li>
+                        <li><strong>Impor Massal (Rekomendasi):</strong> Tekan tombol <strong>"Impor CSV"</strong>. Siapkan file <code>.csv</code> dengan format <code>nisn,nama,jenis_kelamin</code> untuk mengimpor semua siswa sekaligus.</li>
+                    </ul>
+                </li>
+                <li><strong>Cetak Kartu Absensi:</strong> Kembali ke halaman Detail Kelas, lalu pilih menu <strong>"Buat Kartu/QR"</strong>. Anda bisa mencetak semua kartu siswa ke dalam satu file PDF (ukuran A4 atau F4) yang siap dibagikan.</li>
+            </ol>
+
+            <h4>Bagian 3: Melakukan Absensi Harian</h4>
+            <ol>
+                <li><strong>Mulai Absen:</strong> Dari menu navigasi, pilih <strong>"Mulai Absen"</strong>, lalu pilih kelas yang ingin Anda absen.</li>
+                <li><strong>Pilih Metode:</strong>
+                    <ul>
+                        <li><strong>Pindai Langsung (Real-time):</strong> Arahkan kamera HP Anda ke kartu QR siswa.</li>
+                        <li><strong>Pindai dari Galeri:</strong> Jika Anda menerima foto QR Code dari siswa.</li>
+                        <li><strong>Absensi Manual:</strong> Untuk siswa yang tidak membawa kartu.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>Bagian 4: Melihat dan Mengekspor Rekap</h4>
+            <ol>
+                <li><strong>Buka Rekap:</strong> Dari menu navigasi, pilih <strong>"Rekap Absensi"</strong>.</li>
+                <li><strong>Pilih Periode:</strong> Anda dapat melihat rekapitulasi dalam mode <strong>Harian, Mingguan, atau Bulanan</strong>.</li>
+                <li><strong>Ekspor ke Excel:</strong> Tekan ikon unduh (panah ke bawah) untuk menyimpan laporan dalam format file Excel (.xlsx).</li>
+                <li><strong>Sinkronisasi ke Google Sheet (Fitur Pro):</strong> Buka menu <strong>"Sinkronisasi"</strong> untuk mengekspor rekap Harian, Mingguan, Bulanan, bahkan satu Semester penuh langsung ke akun Google Sheet Anda.</li>
+            </ol>
+
+            <h4>Bagian 5: Aktivasi Aplikasi (Setelah 14 Hari)</h4>
+            <ol>
+                <li><strong>Minta Kunci Aktivasi:</strong> Setelah masa percobaan berakhir, tekan tombol <strong>"Minta Kunci Aktivasi"</strong>.</li>
+                <li><strong>Lengkapi Data & Kirim:</strong> Isi formulir singkat dan pilih aplikasi (Email/WhatsApp) untuk mengirim permintaan otomatis ke developer.</li>
+                <li><strong>Dapatkan Kunci:</strong> Anda akan menerima balasan berisi instruksi pembayaran dan kunci aktivasi.</li>
+                <li><strong>Aktivasi:</strong> Masukkan kunci yang Anda terima ke dalam aplikasi untuk membuka semua fitur secara permanen untuk 1 Tahun Ajaran.</li>
+            </ol>
+        </section>
+        <!-- ======================================================= -->
+        <!--             AKHIR DARI BAGIAN BARU                      -->
+        <!-- ======================================================= -->
 
     </div>
 
