@@ -77,9 +77,11 @@
             color: #34495e;
             margin-bottom: 2rem;
         }
-        h3 {
+        h3, h4.section-subtitle {
              text-align: center;
              color: #34495e;
+             margin-top: 2.5rem;
+             margin-bottom: 1rem;
         }
         .features-grid {
             display: grid;
@@ -152,21 +154,21 @@
         </header>
 
         <!-- ============================================= -->
-        <!-- ✅ BAGIAN DOWNLOAD YANG SUDAH DIRAPIKAN       -->
+        <!-- BAGIAN DOWNLOAD APLIKASI UTAMA                -->
         <!-- ============================================= -->
         <section class="section">
             <h2>Download Aplikasi</h2>
             
-            <h3>Aplikasi Guru (Scan Class)</h3>
+            <h4 class="section-subtitle">Aplikasi Guru (Scan Class)</h4>
             <a href="https://drive.usercontent.google.com/download?id=1KeCu6lOuTviKkZav4xIHn9_aUB6c6Bk9&export=download&authuser=0" class="download-button">Unduh Update V.2 (Terbaru)</a>
             <a href="https://drive.usercontent.google.com/download?id=1p_ONtqnWb0HyW1B0jMk5K5A-lVgcaKNt&export=download&authuser=0" class="download-button secondary">Unduh Scan Class V1.2 (Lama)</a>
 
-            <h3>Aplikasi Orang Tua (Izin Siswa)</h3>
+            <h4 class="section-subtitle">Aplikasi Orang Tua (Izin Siswa)</h4>
             <a href="https://drive.google.com/file/d/1j-LI4z7R7hzO32IFJN-VLdgV4NteOvw4/view?usp=sharing" class="download-button">Unduh Izin Siswa V1</a>
         </section>
 
         <!-- ======================================================= -->
-        <!-- ✅ BAGIAN BARU: CATATAN PERUBAHAN (CHANGELOG)           -->
+        <!-- CATATAN PERUBAHAN (CHANGELOG)                           -->
         <!-- ======================================================= -->
         <section class="section changelog">
             <h2>✨ Apa yang Baru di V.2?</h2>
@@ -181,20 +183,24 @@
             </ul>
         </section>
 
+        <!-- ======================================================= -->
+        <!-- ✅ FILE PENDUKUNG & TUTORIAL (TERMASUK JS SCRIPT)      -->
+        <!-- ======================================================= -->
         <section class="section">
             <h2>File Pendukung & Tutorial</h2>
 
-            <h3>File Pendukung</h3>
+            <h4 class="section-subtitle">File Data Master</h4>
+            <p style="text-align: center;">Format ini dapat digunakan untuk semua versi Scan Class.</p>
             <a href="https://drive.google.com/file/d/1eu-5L-mogqYmrzVdhNc8-aba8KDBXIWx/view?usp=sharing" class="download-button secondary">Unduh Contoh Format Master Siswa (CSV)</a>
             
-            <h3>Kode Google Apps Script</h3>
+            <h4 class="section-subtitle">Kode Google Apps Script</h4>
             <p style="text-align: center;">Hubungkan aplikasi ke Google Sheets Anda untuk rekap otomatis.</p>
             <a href="https://drive.google.com/file/d/1kLX30K9OiZs2bmLGp5dR6zEA8XaBhG30/view" class="download-button secondary">Kode Apps Script untuk Scan Class V.2</a>
             <a href="https://docs.google.com/document/d/17jkMZtv8cFbGap0if3KiYYCMK9jNYGwv/edit?usp=sharing&ouid=118214817902322932165&rtpof=true&sd=true" class="download-button secondary">Kode Apps Script untuk Scan Class V.1.2</a>
             <a href="https://drive.google.com/file/d/1OMbJV6NULubkMj4QBobPblZ_YE_uoZHy/view" class="download-button secondary">Kode Apps Script untuk Aplikasi Izin Siswa</a>
 
-            <h3>Video Tutorial</h3>
-            <p style="text-align: center;">Menghubungkan Scan Class ke Google Sheet melalui Apps Script Code</p>
+            <h4 class="section-subtitle">Video Tutorial</h4>
+            <p style="text-align: center;">Menghubungkan Scan Class ke Google Sheet</p>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/ibsJVs8RtoI?si=Aw-MAleIma2LTS-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
@@ -205,46 +211,36 @@
             </div>
         </section>
 
-        <!-- Petunjuk Penggunaan (Sudah ada, tidak diubah) -->
         <section class="section instructions">
             <h2>📝 Petunjuk Penggunaan</h2>
 
-            <!-- ======================================================= -->
-            <!-- ✅ BAGIAN BARU: PETUNJUK PENGGUNAAN UPDATE V.2          -->
-            <!-- ======================================================= -->
             <h4>Update V.2: Manajemen Data Siswa & Integrasi Izin</h4>
             <ol>
                 <li><strong>Mengelola Data Siswa (Baru):</strong>
                     <ul>
                         <li>Di "Manajemen Kelas" -> "Manajemen Siswa", sekarang ada tombol <strong>"Ekspor CSV"</strong> untuk mem-backup data siswa Anda.</li>
-                        <li>Tombol <strong>"Impor CSV"</strong> kini bisa digunakan untuk memulihkan data dari file backup atau menambah siswa baru. Format tetap sama.</li>
+                        <li>Tombol <strong>"Impor CSV"</strong> kini bisa digunakan untuk memulihkan data dari file backup atau menambah siswa baru.</li>
                     </ul>
                 </li>
                 <li><strong>Menerima Izin dari Orang Tua (Baru):</strong>
                     <ul>
                         <li>Pastikan aplikasi terkoneksi internet.</li>
-                        <li>Setiap kali Anda membuka halaman "Rekap Absensi", aplikasi akan otomatis mengecek dan menarik data izin terbaru yang dikirim dari Aplikasi Izin Siswa.</li>
+                        <li>Setiap kali Anda membuka halaman "Rekap Absensi", aplikasi akan otomatis mengecek dan menarik data izin terbaru.</li>
                         <li>Status siswa di rekap akan otomatis berubah menjadi "Sakit" atau "Izin" sesuai pengajuan yang disetujui.</li>
                     </ul>
                 </li>
             </ol>
             <hr>
 
-            <h4>Bagian 1: Instalasi dan Pendaftaran Awal (Pengguna Baru)</h4>
+            <h4>Dasar: Instalasi & Penyiapan (Untuk Pengguna Baru)</h4>
             <ol>
-                <li><strong>Unduh & Instal Aplikasi:</strong> Ikuti petunjuk "Cara Instalasi" di bawah.</li>
-                <li><strong>Daftar Akun Guru:</strong> Buka aplikasi, lalu pilih peran Anda.</li>
-                <li><strong>Isi Formulir:</strong> Lengkapi data diri Anda. Pastikan email aktif.</li>
-            </ol>
-
-            <h4>Bagian 2: Menyiapkan Kelas dan Siswa</h4>
-            <ol>
-                <li><strong>Buat Kelas Baru:</strong> Dari Dashboard, masuk ke "Manajemen Kelas", lalu tekan tombol <code>+</code>.</li>
+                <li><strong>Instal & Daftar:</strong> Unduh dan instal aplikasi, lalu daftar akun guru dengan email aktif.</li>
+                <li><strong>Buat Kelas:</strong> Dari Dashboard, masuk ke "Manajemen Kelas", lalu tekan tombol <code>+</code>.</li>
                 <li><strong>Tambah Siswa:</strong> Masuk ke kelas yang dibuat, pilih "Manajemen Siswa", lalu gunakan tombol <code>+</code> (manual) atau <strong>"Impor CSV"</strong> (massal).</li>
                 <li><strong>Cetak Kartu Absensi:</strong> Kembali ke Detail Kelas, pilih "Buat Kartu/QR" untuk mencetak semua QR code siswa.</li>
             </ol>
 
-            <h4>Bagian 3 & 4: Absensi dan Rekap (Tidak Berubah)</h4>
+            <h4>Absensi dan Rekap (Tidak Berubah)</h4>
             <p>Proses melakukan absensi harian dan melihat rekap masih sama seperti versi sebelumnya.</p>
         </section>
         
