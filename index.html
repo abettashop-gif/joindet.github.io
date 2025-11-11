@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyQrAbsensi - Aplikasi Absensi QR Code untuk Guru</title>
+    <title>Scan Class - Aplikasi Absensi QR Code untuk Sekolah</title>
     <style>
         /* CSS untuk tampilan yang bersih dan modern */
         body {
@@ -24,11 +24,13 @@
         .header {
             text-align: center;
             padding: 2rem 0;
+            border-bottom: 1px solid #e7e7e7;
         }
         .app-logo {
             width: 100px;
             height: 100px;
             margin-bottom: 1rem;
+            border-radius: 20%; /* Membuat sudut logo lebih halus */
         }
         h1 {
             font-size: 2.5rem;
@@ -43,8 +45,8 @@
         .download-button {
             display: block;
             width: 90%;
-            max-width: 350px;
-            margin: 2.5rem auto;
+            max-width: 400px; /* Sedikit lebih lebar */
+            margin: 1.5rem auto;
             padding: 1rem;
             background-color: #007bff;
             color: #fff;
@@ -59,6 +61,12 @@
             background-color: #0056b3;
             transform: translateY(-2px);
         }
+        .download-button.secondary { /* Tombol untuk versi lama/file pendukung */
+            background-color: #6c757d;
+        }
+        .download-button.secondary:hover {
+            background-color: #5a6268;
+        }
         .section {
             margin-top: 3rem;
             padding-top: 2rem;
@@ -68,6 +76,10 @@
             text-align: center;
             color: #34495e;
             margin-bottom: 2rem;
+        }
+        h3 {
+             text-align: center;
+             color: #34495e;
         }
         .features-grid {
             display: grid;
@@ -101,6 +113,27 @@
             margin-bottom: 0.5rem;
             color: #2c3e50;
         }
+        .changelog blockquote { /* Sorot perubahan penting */
+            background: #eef7ff;
+            border-left: 5px solid #007bff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .video-container { /* Membuat video responsive */
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 1.5rem 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
         .footer {
             text-align: center;
             margin-top: 4rem;
@@ -113,29 +146,108 @@
 
     <div class="container">
         <header class="header">
-            <!-- Jika Anda punya logo, unggah dan ganti 'logo.png' -->
-            <img src="app_logo.png" alt="Logo MyQrAbsensi" class="app-logo">
+            <img src="app_logo.png" alt="Logo Scan Class" class="app-logo">
             <h1>Scan Class</h1>
             <p class="tagline">Absensi Cepat dan Mudah dengan QR Code</p>
         </header>
 
-        <!-- ✅ GANTI # DENGAN LINK DOWNLOAD APK DARI GITHUB RELEASES -->
-        <h3>Download Aplikasi Guru</h3>
-        <p href="New Update"</p>
-        <a href="https://drive.usercontent.google.com/download?id=1KeCu6lOuTviKkZav4xIHn9_aUB6c6Bk9&export=download&authuser=0" class="download-button">Unduh Update V.2</a>
-        <p href="Release Awal"</p>
-        <a href="https://drive.usercontent.google.com/download?id=1p_ONtqnWb0HyW1B0jMk5K5A-lVgcaKNt&export=download&authuser=0" class="download-button">Scan Class V1.2</a>
-        <h3>Download Aplikasi Orang Tua</h3>
-             <a href="https://drive.google.com/file/d/1j-LI4z7R7hzO32IFJN-VLdgV4NteOvw4/view?usp=sharing" class="download-button">Izin Siswa V1</a>
-
+        <!-- ============================================= -->
+        <!-- ✅ BAGIAN DOWNLOAD YANG SUDAH DIRAPIKAN       -->
+        <!-- ============================================= -->
+        <section class="section">
+            <h2>Download Aplikasi</h2>
             
-        <p><a href="https://drive.google.com/file/d/1eu-5L-mogqYmrzVdhNc8-aba8KDBXIWx/view?usp=sharing" class="download-button">Unduh Contoh Format data Master Siswa (CSV)</a></p>
-        <p><a href="https://docs.google.com/document/d/17jkMZtv8cFbGap0if3KiYYCMK9jNYGwv/edit?usp=sharing&ouid=118214817902322932165&rtpof=true&sd=true" class="download-button">Code App Scrip</a></p>
-        <h3>Tutorial</h3>
-        <p> Menghubungkan Scan Class ke google sheet melalui Apps Scrip Code</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ibsJVs8RtoI?si=Aw-MAleIma2LTS-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p> "Membuat file CSV untuk Master Data Siswa"</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-pwUjCfONNY?si=E4YwiTtww6dCUzd3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>Aplikasi Guru (Scan Class)</h3>
+            <a href="https://drive.usercontent.google.com/download?id=1KeCu6lOuTviKkZav4xIHn9_aUB6c6Bk9&export=download&authuser=0" class="download-button">Unduh Update V.2 (Terbaru)</a>
+            <a href="https://drive.usercontent.google.com/download?id=1p_ONtqnWb0HyW1B0jMk5K5A-lVgcaKNt&export=download&authuser=0" class="download-button secondary">Unduh Scan Class V1.2 (Lama)</a>
+
+            <h3>Aplikasi Orang Tua (Izin Siswa)</h3>
+            <a href="https://drive.google.com/file/d/1j-LI4z7R7hzO32IFJN-VLdgV4NteOvw4/view?usp=sharing" class="download-button">Unduh Izin Siswa V1</a>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- ✅ BAGIAN BARU: CATATAN PERUBAHAN (CHANGELOG)           -->
+        <!-- ======================================================= -->
+        <section class="section changelog">
+            <h2>✨ Apa yang Baru di V.2?</h2>
+            <blockquote>
+                <p><strong>Fokus Utama Update V.2:</strong> Integrasi penuh dengan Aplikasi Izin Siswa (Orang Tua), manajemen data siswa yang lebih fleksibel, dan rekap absensi yang lebih detail.</p>
+            </blockquote>
+            <ul>
+                <li><strong>Integrasi Izin Siswa:</strong> Sekarang aplikasi dapat menerima dan merekam pengajuan izin (Sakit/Izin) yang dikirim oleh orang tua melalui Aplikasi Izin Siswa. Status siswa akan otomatis diperbarui di rekap.</li>
+                <li><strong>Impor & Ekspor Data Siswa:</strong> Data siswa kini bisa di-backup (ekspor) ke file CSV dan dipulihkan (impor) kembali. Memudahkan saat berganti HP atau berbagi data dengan guru lain.</li>
+                <li><strong>Kolom Baru di Rekap:</strong> Rekap absensi sekarang memiliki kolom terpisah untuk jumlah 'Sakit' dan 'Izin', memberikan laporan yang lebih akurat.</li>
+                <li><strong>Perbaikan UI/UX:</strong> Beberapa penyesuaian tata letak dan alur penggunaan untuk membuat aplikasi lebih nyaman digunakan.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>File Pendukung & Tutorial</h2>
+
+            <h3>File Pendukung</h3>
+            <a href="https://drive.google.com/file/d/1eu-5L-mogqYmrzVdhNc8-aba8KDBXIWx/view?usp=sharing" class="download-button secondary">Unduh Contoh Format Master Siswa (CSV)</a>
+            
+            <h3>Kode Google Apps Script</h3>
+            <p style="text-align: center;">Hubungkan aplikasi ke Google Sheets Anda untuk rekap otomatis.</p>
+            <a href="https://drive.google.com/file/d/1kLX30K9OiZs2bmLGp5dR6zEA8XaBhG30/view" class="download-button secondary">Kode Apps Script untuk Scan Class V.2</a>
+            <a href="https://docs.google.com/document/d/17jkMZtv8cFbGap0if3KiYYCMK9jNYGwv/edit?usp=sharing&ouid=118214817902322932165&rtpof=true&sd=true" class="download-button secondary">Kode Apps Script untuk Scan Class V.1.2</a>
+            <a href="https://drive.google.com/file/d/1OMbJV6NULubkMj4QBobPblZ_YE_uoZHy/view" class="download-button secondary">Kode Apps Script untuk Aplikasi Izin Siswa</a>
+
+            <h3>Video Tutorial</h3>
+            <p style="text-align: center;">Menghubungkan Scan Class ke Google Sheet melalui Apps Script Code</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/ibsJVs8RtoI?si=Aw-MAleIma2LTS-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            
+            <p style="text-align: center;">Membuat file CSV untuk Master Data Siswa</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/-pwUjCfONNY?si=E4YwiTtww6dCUzd3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Petunjuk Penggunaan (Sudah ada, tidak diubah) -->
+        <section class="section instructions">
+            <h2>📝 Petunjuk Penggunaan</h2>
+
+            <!-- ======================================================= -->
+            <!-- ✅ BAGIAN BARU: PETUNJUK PENGGUNAAN UPDATE V.2          -->
+            <!-- ======================================================= -->
+            <h4>Update V.2: Manajemen Data Siswa & Integrasi Izin</h4>
+            <ol>
+                <li><strong>Mengelola Data Siswa (Baru):</strong>
+                    <ul>
+                        <li>Di "Manajemen Kelas" -> "Manajemen Siswa", sekarang ada tombol <strong>"Ekspor CSV"</strong> untuk mem-backup data siswa Anda.</li>
+                        <li>Tombol <strong>"Impor CSV"</strong> kini bisa digunakan untuk memulihkan data dari file backup atau menambah siswa baru. Format tetap sama.</li>
+                    </ul>
+                </li>
+                <li><strong>Menerima Izin dari Orang Tua (Baru):</strong>
+                    <ul>
+                        <li>Pastikan aplikasi terkoneksi internet.</li>
+                        <li>Setiap kali Anda membuka halaman "Rekap Absensi", aplikasi akan otomatis mengecek dan menarik data izin terbaru yang dikirim dari Aplikasi Izin Siswa.</li>
+                        <li>Status siswa di rekap akan otomatis berubah menjadi "Sakit" atau "Izin" sesuai pengajuan yang disetujui.</li>
+                    </ul>
+                </li>
+            </ol>
+            <hr>
+
+            <h4>Bagian 1: Instalasi dan Pendaftaran Awal (Pengguna Baru)</h4>
+            <ol>
+                <li><strong>Unduh & Instal Aplikasi:</strong> Ikuti petunjuk "Cara Instalasi" di bawah.</li>
+                <li><strong>Daftar Akun Guru:</strong> Buka aplikasi, lalu pilih peran Anda.</li>
+                <li><strong>Isi Formulir:</strong> Lengkapi data diri Anda. Pastikan email aktif.</li>
+            </ol>
+
+            <h4>Bagian 2: Menyiapkan Kelas dan Siswa</h4>
+            <ol>
+                <li><strong>Buat Kelas Baru:</strong> Dari Dashboard, masuk ke "Manajemen Kelas", lalu tekan tombol <code>+</code>.</li>
+                <li><strong>Tambah Siswa:</strong> Masuk ke kelas yang dibuat, pilih "Manajemen Siswa", lalu gunakan tombol <code>+</code> (manual) atau <strong>"Impor CSV"</strong> (massal).</li>
+                <li><strong>Cetak Kartu Absensi:</strong> Kembali ke Detail Kelas, pilih "Buat Kartu/QR" untuk mencetak semua QR code siswa.</li>
+            </ol>
+
+            <h4>Bagian 3 & 4: Absensi dan Rekap (Tidak Berubah)</h4>
+            <p>Proses melakukan absensi harian dan melihat rekap masih sama seperti versi sebelumnya.</p>
+        </section>
+        
         <section class="section">
             <h2>Fitur Unggulan</h2>
             <div class="features-grid">
@@ -147,7 +259,7 @@
                 <div class="feature-item">
                     <div class="feature-icon">📊</div>
                     <h3>Rekap Otomatis</h3>
-                    <p>Lihat rekap kehadiran harian, mingguan, dan bulanan. Ekspor ke Excel atau sinkronisasi ke Google Sheets.</p>
+                    <p>Lihat rekap kehadiran harian, mingguan, dan bulanan, kini lengkap dengan data Sakit/Izin.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🔒</div>
@@ -162,72 +274,10 @@
             <ol>
                 <li>Klik tombol "Unduh Aplikasi" di atas.</li>
                 <li>Setelah selesai, buka file APK yang telah diunduh.</li>
-                <li>Jika muncul peringatan keamanan, pilih <strong>"Setelan"</strong> dan izinkan instalasi dari browser Anda (misalnya Chrome).</li>
+                <li>Jika muncul peringatan keamanan, pilih <strong>"Setelan"</strong> dan izinkan instalasi dari sumber tidak dikenal (misalnya dari browser atau file manager Anda).</li>
                 <li>Kembali dan lanjutkan proses instalasi hingga selesai.</li>
             </ol>
         </section>
-
-        <!-- ======================================================= -->
-        <!-- ✅ BAGIAN BARU: PETUNJUK PENGGUNAAN DITAMBAHKAN DI SINI   -->
-        <!-- ======================================================= -->
-        <section class="section instructions">
-            <h2>📝 Petunjuk Penggunaan</h2>
-            <p>Ikuti langkah-langkah mudah ini untuk memulai absensi digital Anda.</p>
-
-            <h4>Bagian 1: Instalasi dan Pendaftaran Awal</h4>
-            <ol>
-                <li><strong>Unduh & Instal Aplikasi:</strong> Ikuti petunjuk "Cara Instalasi" di atas.</li>
-                <li><strong>Daftar Akun Guru:</strong> Buka aplikasi, lalu pilih peran Anda (Wali Kelas atau Guru Mata Pelajaran).</li>
-                <li><strong>Isi Formulir:</strong> Lengkapi data diri Anda. Pastikan email aktif untuk pemulihan akun.</li>
-                <li><strong>Masa Percobaan:</strong> Selamat! Setelah berhasil mendaftar, aplikasi Anda langsung aktif dalam mode percobaan gratis selama 14 hari dengan akses penuh ke semua fitur.</li>
-            </ol>
-
-            <h4>Bagian 2: Menyiapkan Kelas dan Siswa</h4>
-            <ol>
-                <li><strong>Masuk ke Manajemen Kelas:</strong> Dari halaman Dashboard, buka menu navigasi (ikon tiga garis), lalu pilih <strong>"Manajemen Kelas"</strong>.</li>
-                <li><strong>Buat Kelas Baru:</strong> Tekan tombol <code>+</code> untuk membuat kelas pertama Anda (contoh: "Kelas 10-A").</li>
-                <li><strong>Masuk ke Detail Kelas:</strong> Klik pada kartu kelas yang baru saja Anda buat.</li>
-                <li><strong>Tambah Siswa:</strong> Di halaman Detail Kelas, pilih menu <strong>"Manajemen Siswa"</strong>. Di sini Anda bisa:
-                    <ul>
-                        <li><strong>Tambah Manual:</strong> Tekan tombol <code>+</code> untuk menambah siswa satu per satu.</li>
-                        <li><strong>Impor Massal (Rekomendasi):</strong> Tekan tombol <strong>"Impor CSV"</strong>. Siapkan file <code>.csv</code> dengan format <code>nisn,nama,jenis_kelamin</code> untuk mengimpor semua siswa sekaligus.</li>
-                    </ul>
-                </li>
-                <li><strong>Cetak Kartu Absensi:</strong> Kembali ke halaman Detail Kelas, lalu pilih menu <strong>"Buat Kartu/QR"</strong>. Anda bisa mencetak semua kartu siswa ke dalam satu file PDF (ukuran A4 atau F4) yang siap dibagikan.</li>
-            </ol>
-
-            <h4>Bagian 3: Melakukan Absensi Harian</h4>
-            <ol>
-                <li><strong>Mulai Absen:</strong> Dari menu navigasi, pilih <strong>"Mulai Absen"</strong>, lalu pilih kelas yang ingin Anda absen.</li>
-                <li><strong>Pilih Metode:</strong>
-                    <ul>
-                        <li><strong>Pindai Langsung (Real-time):</strong> Arahkan kamera HP Anda ke kartu QR siswa.</li>
-                        <li><strong>Pindai dari Galeri:</strong> Jika Anda menerima foto QR Code dari siswa.</li>
-                        <li><strong>Absensi Manual:</strong> Untuk siswa yang tidak membawa kartu.</li>
-                    </ul>
-                </li>
-            </ol>
-
-            <h4>Bagian 4: Melihat dan Mengekspor Rekap</h4>
-            <ol>
-                <li><strong>Buka Rekap:</strong> Dari menu navigasi, pilih <strong>"Rekap Absensi"</strong>.</li>
-                <li><strong>Pilih Periode:</strong> Anda dapat melihat rekapitulasi dalam mode <strong>Harian, Mingguan, atau Bulanan</strong>.</li>
-                <li><strong>Ekspor ke Excel:</strong> Tekan ikon unduh (panah ke bawah) untuk menyimpan laporan dalam format file Excel (.xlsx).</li>
-                <li><strong>Sinkronisasi ke Google Sheet (Fitur Pro):</strong> Buka menu <strong>"Sinkronisasi"</strong> untuk mengekspor rekap Harian, Mingguan, Bulanan, bahkan satu Semester penuh langsung ke akun Google Sheet Anda.</li>
-            </ol>
-
-            <h4>Bagian 5: Aktivasi Aplikasi (Setelah 14 Hari)</h4>
-            <ol>
-                <li><strong>Minta Kunci Aktivasi:</strong> Setelah masa percobaan berakhir, tekan tombol <strong>"Minta Kunci Aktivasi"</strong>.</li>
-                <li><strong>Lengkapi Data & Kirim:</strong> Isi formulir singkat dan pilih aplikasi (Email/WhatsApp) untuk mengirim permintaan otomatis ke developer.</li>
-                <li><strong>Dapatkan Kunci:</strong> Anda akan menerima balasan berisi instruksi pembayaran dan kunci aktivasi.</li>
-                <li><strong>Aktivasi:</strong> Masukkan kunci yang Anda terima ke dalam aplikasi untuk membuka semua fitur secara permanen untuk 1 Tahun Ajaran.</li>
-            </ol>
-        </section>
-        <!-- ======================================================= -->
-        <!--             AKHIR DARI BAGIAN BARU                      -->
-        <!-- ======================================================= -->
-
     </div>
 
     <footer class="footer">
