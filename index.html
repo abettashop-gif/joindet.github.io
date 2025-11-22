@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
-<head><meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyQrAbsensi - Ekosistem Aplikasi Absensi Sekolah</title>
+    <title>Scan Class - Solusi Absensi Digital untuk Sekolah</title>
+    <!-- Tambahkan Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-color: #343a40;
+            --muted-text-color: #6c757d;
+            --border-color: #e9ecef;
+            --box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --border-radius: 12px;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
         .container {
             max-width: 800px;
             margin: 2rem auto;
             padding: 1rem 2rem;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            background: var(--surface-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
         .header {
             text-align: center;
             padding: 2rem 0;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid var(--border-color);
         }
         .app-logo {
             width: 100px;
@@ -31,36 +45,48 @@
             border-radius: 22%;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #212529;
             margin: 0;
+            font-weight: 700;
         }
         .tagline {
-            font-size: 1.2rem;
-            color: #6c757d;
+            font-size: 1.25rem;
+            color: var(--muted-text-color);
             margin-top: 0.5rem;
         }
+        .main-buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem auto;
+        }
         .download-button {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             width: 90%;
             max-width: 450px;
-            margin: 1rem auto;
+            margin: 0 auto;
             padding: 1rem;
-            background-color: #007bff;
+            background-color: var(--primary-color);
             color: #fff;
             text-align: center;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
         }
         .download-button:hover {
             background-color: #0056b3;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         .download-button.secondary {
-            background-color: #6c757d;
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.2);
         }
         .download-button.secondary:hover {
             background-color: #5a6268;
@@ -68,38 +94,48 @@
         .section {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
+            border-top: 1px solid var(--border-color);
         }
         h2 {
             text-align: center;
-            color: #343a40;
+            color: var(--text-color);
             margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
         }
-        h3, h4.section-subtitle {
-             text-align: center;
+        h3 {
              color: #495057;
              margin-top: 2.5rem;
              margin-bottom: 1rem;
+             border-bottom: 2px solid var(--primary-color);
+             padding-bottom: 0.5rem;
+             display: inline-block;
         }
-        .instructions ol, .instructions ul {
-            padding-left: 20px;
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            padding: 20px 20px 20px 40px;
-            border-radius: 8px;
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
         }
-        .instructions li {
-            margin-bottom: 1rem;
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
-        .instructions li::marker {
-            font-weight: bold;
+        .feature-list li::before {
+            content: '\f00c'; /* Font Awesome check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #28a745; /* Green check */
         }
-        .highlight {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
+        .info-box {
+            background: #e9f5ff;
+            border-left: 5px solid var(--primary-color);
             padding: 1.5rem;
             margin: 1.5rem 0;
-            border-radius: 4px;
+            border-radius: 8px;
         }
         .video-container {
             position: relative;
@@ -107,7 +143,8 @@
             width: 100%;
             padding-top: 56.25%; /* 16:9 Aspect Ratio */
             margin: 1.5rem 0;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
         .video-container iframe {
             position: absolute;
@@ -117,22 +154,27 @@
             height: 100%;
         }
         details {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
             padding: 1rem;
             margin-top: 1rem;
+            transition: box-shadow 0.3s;
+        }
+        details[open] {
+             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         summary {
             font-weight: bold;
             cursor: pointer;
-            color: #007bff;
+            color: var(--primary-color);
+            font-size: 1.1rem;
         }
         .footer {
             text-align: center;
             margin-top: 4rem;
             padding: 2rem;
-            color: #6c757d;
+            color: var(--muted-text-color);
         }
     </style>
 </head>
@@ -140,106 +182,102 @@
 
     <div class="container">
         <header class="header">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7L0J3Fk2z2-y42wzPvb3yVw8SgG_g1jT4518HBV2563H1pYy8uHq-fXq6D2h1uU3PgA0D_E-2W_wBWWUGBn5x_iU7I9pP3T_aJ9D-v-9rW34nv-1-g0/s200/MyQrAbsensi.png" alt="Logo MyQrAbsensi" class="app-logo">
-            <h1>MyQrAbsensi</h1>
-            <p class="tagline">Ekosistem Aplikasi Absensi QR Code untuk Sekolah</p>
+            <!-- Ganti dengan URL Logo Aplikasi "Scan Class" Anda -->
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7L0J3Fk2z2-y42wzPvb3yVw8SgG_g1jT4518HBV2563H1pYy8uHq-fXq6D2h1uU3PgA0D_E-2W_wBWWUGBn5x_iU7I9pP3T_aJ9D-v-9rW34nv-1-g0/s200/MyQrAbsensi.png" alt="Logo Scan Class" class="app-logo">
+            <h1>Scan Class</h1>
+            <p class="tagline">Solusi Absensi Digital Cerdas untuk Guru & Sekolah</p>
         </header>
 
         <!-- ============================================= -->
-        <!-- LANGKAH 1: DOWNLOAD APLIKASI UTAMA            -->
+        <!-- Tombol Unduh Utama                            -->
         <!-- ============================================= -->
-        <section class="section">
-            <h2>Langkah 1: Unduh Aplikasi</h2>
-            <p style="text-align: center;">Pilih aplikasi yang sesuai dengan peran Anda.</p>
+        <section class="main-buttons-container">
+            <h2 style="margin-bottom: 0;">Unduh Aplikasi</h2>
+            <p style="text-align: center; margin-top: -1rem; color: var(--muted-text-color);">Pilih aplikasi yang sesuai dengan peran Anda.</p>
             
-            <h4 class="section-subtitle">Untuk Guru (Wajib)</h4>
-            <p style="text-align: center;">Aplikasi untuk melakukan absensi, rekap, dan laporan.</p>
-            <a href="https://drive.usercontent.google.com/download?id=1x08t1fqfcSVGFlOKAxwbOKo6ZNx4Gafw&export=download&authuser=0" class="download-button">Unduh Aplikasi Guru V.2.1</a>
+            <a href="https://drive.usercontent.google.com/download?id=1x08t1fqfcSVGFlOKAxwbOKo6ZNx4Gafw&export=download&authuser=0" class="download-button">
+                <i class="fas fa-chalkboard-teacher"></i> Unduh Aplikasi Guru
+            </a>
             
-            <h4 class="section-subtitle">Untuk Orang Tua Murid (Opsional)</h4>
-            <p style="text-align: center;">Aplikasi untuk mengajukan izin sakit/tidak masuk secara online.</p>
-            <a href="https://drive.google.com/file/d/1j-LI4z7R7hzO32IFJN-VLdgV4NteOvw4/view?usp=sharing" class="download-button secondary">Unduh Aplikasi Izin Siswa V.1</a>
+            <a href="https://drive.google.com/file/d/1j-LI4z7R7hzO32IFJN-VLdgV4NteOvw4/view?usp=sharing" class="download-button secondary">
+                <i class="fas fa-user-graduate"></i> Unduh Aplikasi Siswa
+            </a>
         </section>
 
-        <!-- ======================================================= -->
-        <!-- LANGKAH 2: CARA PENGGUNAAN (UNTUK PENGGUNA BARU)         -->
-        <!-- ======================================================= -->
-        <section class="section instructions">
-            <h2>Langkah 2: Ikuti Panduan Penggunaan</h2>
 
-            <div class="highlight">
-                <h4>📌 Panduan untuk Guru (Aplikasi MyQrAbsensi)</h4>
-                <p>Ikuti 5 langkah mudah ini untuk menyiapkan aplikasi Anda:</p>
-                <ol>
-                    <li>
-                        <strong>Daftar Akun Guru (Registrasi)</strong><br>
-                        Buka aplikasi, lalu pilih opsi <strong>"Daftar Akun Baru"</strong>. Isi semua data yang diperlukan seperti Nama, Email, dan buat Username serta Password Anda.
-                    </li>
-                    <li>
-                        <strong>Login & Buat Kelas</strong><br>
-                        Setelah berhasil mendaftar, buka kembali aplikasi dan <strong>Login</strong>. Masuk ke menu "Manajemen Kelas", lalu tekan tombol <code>+</code> untuk membuat kelas baru (contoh: "10-A").
-                    </li>
-                    <li>
-                        <strong>Input Data Siswa</strong><br>
-                        Masuk ke kelas yang baru dibuat, pilih "Manajemen Siswa". Di sini Anda bisa menambah data siswa (Nama dan NISN).
-                    </li>
-                    <li>
-                        <strong>Cetak QR Code Siswa</strong><br>
-                        Jika semua data siswa sudah lengkap, kembali ke menu "Manajemen Kelas", masuk ke detail kelas Anda, lalu pilih "Buat Kartu/QR". Aplikasi akan membuat file yang siap dicetak.
-                    </li>
-                    <li>
-                        <strong>✅ Selesai! Siap Melakukan Absensi</strong><br>
-                        Sekarang Anda bisa mulai melakukan absensi harian di kelas dengan memindai QR code yang sudah dicetak.
-                    </li>
+        <!-- ======================================================= -->
+        <!-- Panduan Pengguna Baru                                   -->
+        <!-- ======================================================= -->
+        <section class="section">
+            <h2>🚀 Untuk Pengguna Baru</h2>
+            <div class="info-box">
+                <h4>Selamat Datang di Scan Class!</h4>
+                <p>Ikuti 5 langkah mudah ini untuk mulai menggunakan aplikasi:</p>
+                <ol style="padding-left: 20px;">
+                    <li><strong>Daftar Akun Guru:</strong> Buka aplikasi dan pilih "Daftar Akun". Isi semua data yang diperlukan.</li>
+                    <li><strong>Login & Buat Kelas:</strong> Masuk dengan akun Anda, lalu buat kelas baru di menu "Manajemen Kelas".</li>
+                    <li><strong>Input Data Siswa:</strong> Masuk ke detail kelas, pilih "Manajemen Siswa", lalu tambahkan data siswa Anda. Gunakan fitur "Impor CSV" untuk proses yang lebih cepat!</li>
+                    <li><strong>Mulai Absensi:</strong> Kembali ke menu utama, pilih "Mulai Absensi", dan tampilkan QR Code di layar Anda. Biarkan siswa memindai QR Code tersebut.</li>
+                    <li><strong>Lihat Rekap:</strong> Semua data absensi akan terekam otomatis. Buka menu "Rekap Absensi" untuk melihat laporan harian, mingguan, atau bulanan.</li>
                 </ol>
             </div>
-            
-            <h4>📋 Panduan untuk Orang Tua (Aplikasi Izin Siswa)</h4>
-             <ul>
-                <li><strong>Instal Aplikasi Izin Siswa</strong> dari link di atas.</li>
-                <li>Buka aplikasi, lalu isi formulir dengan lengkap: <strong>NISN</strong> dan <strong>Nama Siswa</strong> (sesuai data dari sekolah), jenis izin, dan tanggal.</li>
-                <li>Tekan tombol "Ajukan Izin". Pengajuan Anda akan diterima oleh pihak sekolah untuk diproses.</li>
-            </ul>
         </section>
-        
+
         <!-- ======================================================= -->
-        <!-- VIDEO TUTORIAL                                          -->
+        <!-- Fitur & Video Tutorial                                  -->
         <!-- ======================================================= -->
         <section class="section">
-            <h2>Video Tutorial (Untuk Guru)</h2>
-            <h4 class="section-subtitle">Menghubungkan Aplikasi ke Google Sheet (Untuk Rekap Online)</h4>
+            <h2>🌟 Fitur Unggulan Aplikasi Guru</h2>
+            <p>Scan Class dirancang untuk memberdayakan guru dengan fitur-fitur canggih yang mudah digunakan.</p>
+
+            <h3><i class="fas fa-users-cog"></i> Manajemen Fleksibel</h3>
+            <ul class="feature-list">
+                <li><strong>Dukungan Peran Ganda:</strong> Mendaftar sebagai **Wali Kelas** (fokus satu kelas) atau **Guru Mata Pelajaran** (mengelola banyak kelas).</li>
+                <li><strong>Manajemen Siswa Lengkap:</strong> Tambah siswa manual, atau **Impor & Ekspor data siswa** menggunakan file CSV.</li>
+            </ul>
+
+            <h3><i class="fas fa-chart-line"></i> Rekap & Laporan Profesional</h3>
+            <ul class="feature-list">
+                <li><strong>Rekap Multi-Mode:</strong> Analisis data absensi dalam tampilan **Harian, Mingguan, & Bulanan**.</li>
+                <li><strong>Ekspor ke Excel:</strong> Buat laporan matriks absensi profesional dalam format `.xlsx` untuk periode mingguan, bulanan, atau semester penuh.</li>
+                <li><strong>Sinkronisasi Google Sheets:</strong> Hubungkan aplikasi dengan Google Sheet untuk laporan online yang selalu ter-update (fitur Wali Kelas).</li>
+            </ul>
+            
+            <h3><i class="fas fa-cogs"></i> Lain-lain</h3>
+            <ul class="feature-list">
+                <li><strong>Sistem Aktivasi & Lisensi:</strong> Masa percobaan 14 hari dengan akses penuh, diikuti dengan opsi aktivasi untuk penggunaan jangka panjang.</li>
+                <li><strong>Pengajuan Izin Online:</strong> Terintegrasi dengan Aplikasi Siswa untuk menerima pengajuan izin sakit/tidak masuk secara digital.</li>
+            </ul>
+            
+            <h2 style="margin-top: 3rem;">🎬 Video Tutorial</h2>
+            <p style="text-align:center;">Pelajari cara menghubungkan aplikasi ke Google Sheets untuk rekapitulasi online.</p>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/ibsJVs8RtoI?si=Aw-MAleIma2LTS-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
         <!-- ======================================================= -->
-        <!-- KEBIJAKAN PRIVASI & SYARAT KETENTUAN                    -->
+        <!-- Kebijakan & Syarat                                     -->
         <!-- ======================================================= -->
         <section class="section">
             <h2>Informasi Penting</h2>
             <details>
                 <summary>Kebijakan Privasi (Privacy Policy)</summary>
                 <div style="padding-top: 1rem;">
-                    <p><strong>Terakhir diperbarui:</strong> 21 November 2025</p>
-                    <p>Aplikasi MyQrAbsensi dan Izin Siswa ("kami", "aplikasi") berkomitmen melindungi privasi Anda. Berikut informasi yang kami kumpulkan dan bagaimana kami menggunakannya:</p>
-                    
+                    <p><strong>Terakhir diperbarui:</strong> 22 November 2025</p>
+                    <p>Aplikasi Scan Class berkomitmen melindungi privasi Anda. Berikut informasi yang kami kumpulkan dan bagaimana kami menggunakannya:</p>
                     <h4>Informasi yang Kami Kumpulkan</h4>
                     <ul>
-                        <li><strong>Aplikasi Guru:</strong> Kami menyimpan data Akun Guru, data Siswa & Kelas yang Anda masukkan, dan riwayat absensi. Data ini mayoritas tersimpan di HP Anda. Kami juga mengumpulkan ID Perangkat khusus untuk keperluan aktivasi lisensi.</li>
-                        <li><strong>Aplikasi Izin Siswa:</strong> Kami mengumpulkan data yang Anda masukkan pada formulir (NISN, Nama Siswa, Jenis Izin, Tanggal) untuk dikirim ke sistem sekolah.</li>
+                        <li><strong>Aplikasi Guru:</strong> Data Akun Guru, data Siswa & Kelas yang Anda masukkan, serta riwayat absensi disimpan secara lokal di perangkat Anda. Kami juga mengumpulkan ID Perangkat unik untuk keperluan aktivasi lisensi.</li>
+                        <li><strong>Aplikasi Siswa:</strong> Data yang dimasukkan pada formulir izin (NISN, Nama, Kelas, Tanggal, Keterangan) akan dikirim ke server kami (Firebase) untuk diteruskan ke guru.</li>
                     </ul>
-
-                    <h4>Bagaimana Kami Menggunakan Informasi</h4>
+                    <h4>Penggunaan Informasi</h4>
                     <ul>
-                        <li><strong>Untuk Fungsi Aplikasi:</strong> Semua data digunakan untuk menjalankan fitur inti aplikasi, seperti rekam absensi, rekapitulasi, dan proses pengajuan izin.</li>
-                        <li><strong>Untuk Aktivasi Lisensi (Aplikasi Guru):</strong> ID Perangkat digunakan untuk memvalidasi kunci aktivasi.</li>
+                        <li>Semua data digunakan untuk menjalankan fitur inti aplikasi, seperti rekam absensi, rekapitulasi, dan proses pengajuan izin.</li>
+                        <li>ID Perangkat digunakan secara anonim untuk memvalidasi kunci aktivasi aplikasi.</li>
                     </ul>
-
                     <h4>Keamanan Data</h4>
-                    <p>Kami tidak menjual atau membagikan informasi pribadi Anda kepada pihak ketiga tanpa izin, kecuali yang diwajibkan oleh hukum. Data sensitif seperti daftar siswa dan riwayat absen disimpan secara lokal di perangkat Guru.</p>
-
-                    <h4>Hubungi Kami</h4>
+                    <p>Kami tidak menjual atau membagikan informasi pribadi Anda kepada pihak ketiga. Data sensitif seperti daftar siswa dan riwayat absensi tersimpan aman di perangkat Anda.</p>
                     <p>Jika ada pertanyaan, hubungi kami di: <strong>adisaputra99@guru.sd.belajar.id</strong></p>
                 </div>
             </details>
@@ -247,27 +285,16 @@
             <details>
                 <summary>Syarat & Ketentuan (Terms & Conditions)</summary>
                 <div style="padding-top: 1rem;">
-                    <p><strong>Terakhir diperbarui:</strong> 21 November 2025</p>
+                    <p><strong>Terakhir diperbarui:</strong> 22 November 2025</p>
                     <p>Dengan menggunakan aplikasi kami, Anda setuju pada syarat berikut:</p>
-                    
-                    <h4>1. Penggunaan Aplikasi</h4>
+                    <h4>Lisensi dan Aktivasi (Khusus Aplikasi Guru)</h4>
                     <ul>
-                        <li>Aplikasi ini ditujukan untuk digunakan oleh Guru dan Orang Tua di lingkungan sekolah.</li>
-                        <li>Anda bertanggung jawab atas keakuratan data yang dimasukkan ke dalam aplikasi.</li>
+                        <li><strong>Masa Percobaan:</strong> Aplikasi Guru menyediakan masa percobaan gratis selama 14 hari dengan akses penuh ke semua fitur.</li>
+                        <li><strong>Pembatasan Fitur:</strong> Setelah masa percobaan berakhir, fitur premium seperti Ekspor ke Excel dan Sinkronisasi akan dinonaktifkan.</li>
+                        <li><strong>Aktivasi:</strong> Untuk terus menggunakan fitur premium, Anda harus melakukan aktivasi melalui menu yang tersedia di dalam aplikasi. Satu kunci aktivasi berlaku untuk satu perangkat.</li>
                     </ul>
-
-                    <h4>2. Lisensi dan Aktivasi (Khusus Aplikasi Guru)</h4>
-                    <ul>
-                        <li><strong>Masa Percobaan:</strong> Aplikasi Guru menyediakan masa percobaan gratis 14 hari dengan akses penuh.</li>
-                        <li><strong>Pembatasan Fitur:</strong> Setelah masa percobaan berakhir, fitur premium (Ekspor Excel & Sinkronisasi) akan nonaktif.</li>
-                        <li><strong>Aktivasi:</strong> Untuk terus menggunakan fitur premium, Anda harus melakukan aktivasi melalui menu yang tersedia di dalam aplikasi. Satu kunci aktivasi hanya berlaku untuk satu HP.</li>
-                    </ul>
-
-                    <h4>3. Batasan Tanggung Jawab</h4>
-                    <p>Kami tidak bertanggung jawab atas kehilangan data akibat kerusakan HP, penghapusan aplikasi, atau faktor eksternal lainnya. Kami sangat menyarankan Guru untuk melakukan ekspor atau sinkronisasi data secara berkala sebagai cadangan.</p>
-
-                    <h4>Hubungi Kami</h4>
-                    <p>Untuk dukungan teknis, hubungi kami di: <strong>adisaputra99@guru.sd.belajar.id</strong></p>
+                    <h4>Batasan Tanggung Jawab</h4>
+                    <p>Kami tidak bertanggung jawab atas kehilangan data akibat kerusakan perangkat, penghapusan aplikasi, atau faktor eksternal lainnya. Sangat disarankan untuk melakukan ekspor atau sinkronisasi data secara berkala sebagai cadangan mandiri.</p>
                 </div>
             </details>
         </section>
@@ -275,7 +302,7 @@
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 - Dibuat oleh Adi Saputra</p>
+        <p>&copy; 2025 Scan Class - Dibuat oleh Adi Saputra</p>
     </footer>
 
 </body>
